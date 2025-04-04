@@ -6,7 +6,7 @@ import TwitterVerifiedIcon from '@/assets/Twitter_Verified_Badge.svg?react';
 import VertxGroupIcon from '@/assets/vertx-group.svg?react';
 import GmailIcon from '@/assets/gmail.svg?react';
 import Tag from "@/components/ui/tag";
-import { IconLabel } from "@/components/ui/IconLabel";
+import { IconLabel } from "@/components/ui/icon-label";
 
 
 export function Overview() {
