@@ -27,7 +27,7 @@ export  function Users() {
   return (
     <div className="md:min-w-[50px] h-full border-r border-[#555555] bg-black">
        {
-        users.map((user:TUser) => <div key={user.id} className="w-[50px] h-[50px] justify-center flex items-center border-b border-[#555555]">
+        users.map((user:TUser) => <div key={user.id} className="w-[50px] h-[50px] justify-center flex items-center border-b border-[#555555] hover:bg-[#1D1D1D]">
           <div className="bg-white rounded-full w-[30px] h-[30px] flex items-center justify-center ">
             <span className="font-bold text-amber-400">
               {user.name[0].toUpperCase()}
