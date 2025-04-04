@@ -28,7 +28,7 @@ const analyticTabs = [
 
 export function Analytics() {
   return (
-    <div className="flex flex-col w-full sm:h-[calc(100%-60px)] h-[calc(100%-96px)]">
+    <div className="flex flex-col w-full sm:h-[calc(100%-60px)] h-[calc(100%-140px)]">
       <Tabs defaultValue="overview" className="w-full h-full p-0 border-none gap-0">
         <div className="min-h-[50px] sm:border-b sm:border-b-[#555555] w-full flex sm:justify-between items-center max-sm:bg-black">
         <TabsList className="bg-transparent p-0 rounded-none h-full ">
@@ -38,7 +38,7 @@ export function Analytics() {
           More
         </div>
         </div>
-        {analyticTabs.map(({Component, value, title}) => <TabsContent key={title} className="h-[calc(100%-150px)] overflow-auto sm:px-[60px] sm:py-[34px] px-[23px] py-[26px]" value={value}>
+        {analyticTabs.map(({Component, value, title}) => <TabsContent key={title} className="overflow-auto sm:px-[60px] sm:py-[34px] px-[23px] py-[26px]" value={value}>
           <LazyLoadComponent Component={<Component/>}/>
         </TabsContent>)}
 

@@ -53,17 +53,17 @@ const profileTabs = [
 
 export function Profile() {
   return (
-    <div className="flex flex-col w-full sm:h-[calc(100%-60px)] h-[calc(100%-96px)]">
+    <div className="flex flex-col w-full sm:h-[calc(100%-60px)] h-[calc(100%-140px)]">
       <Tabs defaultValue="overview" className="w-full h-full p-0 border-none gap-0">
         <div className="min-h-[50px] sm:border-b sm:border-b-[#555555] w-full flex sm:justify-between items-center max-sm:bg-black">
-          <TabsList className="bg-transparent p-0 rounded-none h-full w-full overflow-x-auto">
+          <TabsList className="bg-transparent p-0 rounded-none h-full max-sm:w-full max-sm:overflow-x-auto">
             {profileTabs.map(tab => <TabsTrigger className="cursor-pointer text-[#555555] rounded-none shadow-none sm:border-r sm:border-r-[#555555] px-[23px] data-[state=active]:bg-transparent data-[state=active]:text-white data-[state=active]:font-semibold text-base max-sm:border-b-2 border-b-0  data-[state=active]:border-b-white" value={tab.value}>{tab.title}</TabsTrigger>)}
           </TabsList>
           <div className='text-white text-base font-semibold px-8 h-full flex items-center border-l border-[#555555] cursor-pointer hover:text-[#555555] max-sm:hidden'>
             More
           </div>
         </div>
-        {profileTabs.map(({ Component, value, title }) => <TabsContent key={title} className="h-[calc(100%-150px)] overflow-auto sm:px-[60px] sm:py-[34px] px-[23px] py-[26px]" value={value}>
+        {profileTabs.map(({ Component, value, title }) => <TabsContent key={title} className="overflow-auto sm:px-[60px] sm:py-[34px] px-[23px] py-[26px]" value={value}>
           <LazyLoadComponent Component={<Component />} />
         </TabsContent>)}
       </Tabs>
