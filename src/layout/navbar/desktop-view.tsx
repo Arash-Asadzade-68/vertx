@@ -6,7 +6,7 @@ export function DesktopView() {
   const pageTitle = useSelector(selectPageTitle);
 
   return (
-    <nav className="text-white flex flex-row border-b border-[#555555] items-center justify-between min-h-[50px] max-sm:hidden bg-black">
+    <nav className="text-white flex flex-row border-b border-[#555555] items-center justify-between min-h-[50px] max-xl:hidden bg-black">
       <div className='flex flex-row h-full'>
         <div className="w-[50px] justify-center flex items-center ">
           <div className="bg-white rounded-full min-w-[30px] min-h-[30px] flex items-center justify-center">

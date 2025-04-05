@@ -7,7 +7,9 @@ export function useEChartsOptions() {
 
 
   function onAddSeries (){
-    setSeries(prevState => [...prevState, {data:[0, 100, 250, 700, 1000, 1400, 1500],type:'line'}])
+   if(state.length < 3){
+    setSeries(prevState => [...prevState, {data:[Math.floor(Math.random() * (2000 - 0 + 1) + 0), Math.floor(Math.random() * (2000 - 0 + 1) + 0), Math.floor(Math.random() * (2000 - 0 + 1) + 0), Math.floor(Math.random() * (2000 - 0 + 1) + 0), Math.floor(Math.random() * (2000 - 0 + 1) + 0), Math.floor(Math.random() * (2000 - 0 + 1) + 0), Math.floor(Math.random() * (2000 - 0 + 1) + 0)],type:'line'}])
+   }
   }
 
   const option: EChartsOption = useMemo(()=> ({
@@ -38,6 +40,7 @@ export function useEChartsOptions() {
   } as EChartsOption),[state]) ;
  return {
   option,
-  onAddSeries
+  onAddSeries,
+  state
  }
 }

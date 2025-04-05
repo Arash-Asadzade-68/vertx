@@ -42,7 +42,7 @@ const navigationItems = [
 export function MobileNavigation() {
   const navigate = useNavigate();
   return (
-    <div className="absolute bottom-0 left-0 right-0 w-full bg-black min-h-[60px] sm:hidden flex flex-row justify-between px-4">
+    <div className="absolute bottom-0 left-0 right-0 w-full bg-black min-h-[60px] xl:hidden flex flex-row justify-between px-4">
        {navigationItems.map(item => <div className='w-10 flex gap-1 justify-center flex-col items-center cursor-pointer' key={item.id} onClick={()=>navigate(item.path)}>
         {item.icon}
         <p className='text-white text-[8px] font-semibold'>{item.title}</p>

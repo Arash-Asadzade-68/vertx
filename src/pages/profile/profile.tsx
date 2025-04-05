@@ -53,17 +53,17 @@ const profileTabs = [
 
 export function Profile() {
   return (
-    <div className="flex flex-col w-full sm:h-[calc(100%-60px)] h-[calc(100%-140px)]">
+    <div className="flex flex-col w-full xl:h-[calc(100%-60px)] h-[calc(100%-140px)]">
       <Tabs defaultValue="overview" className="w-full h-full p-0 border-none gap-0">
-        <div className="min-h-[50px] sm:border-b sm:border-b-[#555555] w-full flex sm:justify-between items-center max-sm:bg-black">
-          <TabsList className="bg-transparent p-0 rounded-none h-full max-sm:w-full max-sm:overflow-x-auto">
-            {profileTabs.map(tab => <TabsTrigger className="cursor-pointer text-[#555555] rounded-none shadow-none sm:border-r sm:border-r-[#555555] px-[23px] data-[state=active]:bg-transparent data-[state=active]:text-white data-[state=active]:font-semibold text-base max-sm:border-b-2 border-b-0  data-[state=active]:border-b-white" value={tab.value}>{tab.title}</TabsTrigger>)}
+        <div className="min-h-[50px] xl:border-b xl:border-b-[#555555] w-full flex xl:justify-between items-center max-xl:bg-black">
+          <TabsList className="bg-transparent p-0 rounded-none h-full max-xl:w-full max-xl:overflow-x-auto">
+            {profileTabs.map(tab => <TabsTrigger className="cursor-pointer text-[#555555] rounded-none shadow-none xl:border-r xl:border-r-[#555555] px-[23px] data-[state=active]:bg-transparent data-[state=active]:text-white data-[state=active]:font-semibold text-base max-xl:border-b-2 border-b-0  data-[state=active]:border-b-white" value={tab.value}>{tab.title}</TabsTrigger>)}
           </TabsList>
-          <div className='text-white text-base font-semibold px-8 h-full flex items-center border-l border-[#555555] cursor-pointer hover:text-[#555555] max-sm:hidden'>
+          <div className='text-white text-base font-semibold px-8 h-full flex items-center border-l border-[#555555] cursor-pointer hover:text-[#555555] max-xl:hidden'>
             More
           </div>
         </div>
-        {profileTabs.map(({ Component, value, title }) => <TabsContent key={title} className="overflow-auto sm:px-[60px] sm:py-[34px] px-[23px] py-[26px]" value={value}>
+        {profileTabs.map(({ Component, value, title }) => <TabsContent key={title} className="overflow-auto xl:px-[60px] xl:py-[34px] px-[23px] py-[26px]" value={value}>
           <LazyLoadComponent Component={<Component />} />
         </TabsContent>)}
       </Tabs>

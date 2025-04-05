@@ -20,11 +20,12 @@ const MapChart = () => {
       stroke: "white",
       strokeWidth: 1,
       strokeOpacity: 0.2,
-      cursor: "pointer"
+      cursor: "pointer",
     };
   };
   return (
-    <div className="flex lg:flex-row sm:justify-between flex-col gap-14 items-center">
+    <div className="flex lg:flex-row lg:justify-between flex-col gap-14 items-center">
+      <div className="[&_svg]:max-w-[400px]">
       <WorldMap
         richInteraction={true}
         backgroundColor={"transparent"}
@@ -37,7 +38,9 @@ const MapChart = () => {
         size="responsive"
         data={data}
         styleFunction={stylingFunction}
+        
       />
+      </div>
       <div className="flex flex-col gap-5 min-w-[238px] max-sm:w-full">
         <CountryProgress iso={<IN width={40} height={28} className="rounded-sm" />} value={44} country="India" color="#4834D4" />
         <CountryProgress iso={<US width={40} height={28} className="rounded-sm" />} value={25} country="USA" color="#BD5302" />

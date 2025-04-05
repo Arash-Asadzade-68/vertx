@@ -13,7 +13,7 @@ export function Routes() {
     <main className="flex flex-col h-full">
       <Navbar />
       <section className="flex flex-row h-full flex-1 w-full">
-        <div className="max-sm:hidden flex flex-row h-full">
+        <div className="max-xl:hidden flex flex-row h-full">
           <Users />
           <Sidebar />
         </div>
