@@ -1,7 +1,16 @@
 import Logo from '@/assets/vertx.svg?react';
 import { EllipsisVertical } from 'lucide-react';
+import {
+  Drawer,
+  DrawerContent,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+import { Sidebar } from '../sidebar';
+import { useState } from 'react';
 
 export function MobileView() {
+  const [open, setOpen] = useState<boolean>(false);
+
   return (
     <nav className="text-white flex flex-row items-center justify-between min-h-[96px] xl:hidden pt-4 bg-black">
       <div className="w-[50px] justify-center flex items-center xl:hidden">
@@ -13,8 +22,14 @@ export function MobileView() {
       </div>
       <Logo />
       <div className='w-[30px] h-[30px] flex items-center justify-center'>
-      <EllipsisVertical className='text-white' size={30}/>
+        <Drawer direction='left' open={open}>
+        <DrawerTrigger> <EllipsisVertical className='text-white cursor-pointer' size={30} onClick={()=>setOpen(!open)} /></DrawerTrigger>
+        <DrawerContent className='bg-black'>
+          <Sidebar setOpen={setOpen}/>
+        </DrawerContent>
+      </Drawer>
       </div>
+      
     </nav>
   )
 }

@@ -23,7 +23,7 @@ const navigationItems = [
     id:'3',
     title:'Connect',
     path:'/connect',
-    icon:<Earth width={18} height={18} fill='#ffffff'/>,
+    icon:<Earth width={24} height={24} fill='#ffffff' />,
   },
   {
     id:'4',

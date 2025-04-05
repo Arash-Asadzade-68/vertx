@@ -5,9 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectPageTitle, setPageTitle } from "@/store/page-title/page-title-slice";
 import clsx from "clsx";
 
+interface ISidebar{
+  setOpen?:(open:boolean) => void;
+}
 
-
-export  function Sidebar() {
+export  function Sidebar({setOpen}:ISidebar) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const title = useSelector(selectPageTitle);
@@ -22,6 +24,7 @@ export  function Sidebar() {
           } onClick={()=>{
             dispatch(setPageTitle(menuItem.title));
             navigate(menuItem.path);
+            setOpen?.(false)
           }}>
             {menuItem.title}
           </p> )
