@@ -54,3 +54,21 @@ export const periods = [
   },
   
 ]
+
+export const addOptions = [
+  {
+    id:'a-1',
+    label:'Connections',
+    value:'connections'
+  },
+  {
+    id:'a-2',
+    label:'Interactions',
+    value:'interactions'
+  },
+  {
+    id:'a-3',
+    label:'Impressions',
+    value:'impressions'
+  },
+]

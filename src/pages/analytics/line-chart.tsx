@@ -1,5 +1,4 @@
 import ReactECharts from 'echarts-for-react';
-import { EChartsOption } from 'echarts';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,51 +15,24 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { categories, periods } from "./select-options"
+import { addOptions, categories, periods } from "./select-options"
 import { StatisticItem } from '@/components/ui/statistic-item';
+import { useEChartsOptions } from './hooks/useEChartsOptions';
 
 
 
-const option: EChartsOption = {
-  grid: {
-    left: "1%",
-    right: "7%",
-    bottom: "14%",
-    containLabel: true
-  },
-  xAxis: {
-    type: 'category',
-    splitLine: {
-      show: false
-    },
-    data: ['Mar1', 'Mar5', 'Mar10', 'Mar15', 'Mar20', 'Mar25', 'Mar30'],
-  },
-  yAxis: {
-    type: 'value',
-    scale: true,
-    splitLine: {
-      show: false
-    },
-    axisLabel: {
-      formatter: (value) => value >= 1000 ? `${value / 1000}k` : `${value}`
-    },
-  },
-  series: [
-    {
-      data: [0, 200, 400, 800, 1200, 1600, 2000],
-      type: 'line'
-    }
-  ]
-};
+
 
 
 export function LineChart() {
+  const {option, onAddSeries} = useEChartsOptions();
+
   return (
     <div className='flex flex-col'>
       <div className="flex flex-row gap-[6px]">
         <Select>
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Select a category" />
+            <SelectValue placeholder="Select" />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
@@ -70,7 +42,7 @@ export function LineChart() {
         </Select>
         <Select>
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Select a period" />
+            <SelectValue placeholder="Select" />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
@@ -85,9 +57,7 @@ export function LineChart() {
           <Plus size={16}/><p className='text-xs font-semibold'>Add</p>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuItem>Connections</DropdownMenuItem>
-            <DropdownMenuItem>Interactions</DropdownMenuItem>
-            <DropdownMenuItem>Impressions</DropdownMenuItem>
+          {addOptions.map(({ id, label }) => <DropdownMenuItem key={id} onClick={onAddSeries} >{label}</DropdownMenuItem>)}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
